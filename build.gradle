@@ -39,7 +39,8 @@ ext {
 
 dependencies {
 
-    // TODO Clean up unused dependencies. Add comments on consideration on any improvements you made.
+    // TODO Clean up unused dependencies. Add comments on consideration on any improvements you made. - DONE
+    // removed some micrometer and springframework.cloud dependencies, as they were not being used
     implementation "org.springframework.boot:spring-boot-starter-actuator"
     implementation "org.springframework.boot:spring-boot-starter-data-jpa"
     implementation "org.springframework.boot:spring-boot-starter-web"
@@ -47,16 +48,9 @@ dependencies {
     implementation "org.springframework.boot:spring-boot-starter-webflux"
     implementation "org.springframework.boot:spring-boot-starter-aop"
     implementation "io.micrometer:micrometer-tracing-bridge-brave"
-    implementation "io.micrometer:micrometer-tracing"
-    implementation "io.micrometer:micrometer-registry-prometheus"
-    implementation "io.micrometer:context-propagation"
-    implementation "org.springframework.cloud:spring-cloud-starter-circuitbreaker-reactor-resilience4j"
-    implementation "org.springframework.cloud:spring-cloud-starter-config"
     implementation "org.springdoc:springdoc-openapi-starter-webmvc-ui:${springdocVersion}"
 
     developmentOnly "org.springframework.boot:spring-boot-devtools"
-    runtimeOnly "io.micrometer:micrometer-registry-prometheus"
-
 
     implementation "org.slf4j:slf4j-api:${slf4jVersion}"
     implementation "ch.qos.logback:logback-core:${logbackVersion}"

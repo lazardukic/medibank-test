@@ -31,7 +31,7 @@ public class ExceptionControllerAdvice extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler(HttpClientErrorException.class)
     ProblemDetail handleHttpClientException(final HttpClientErrorException e) {
-        // I went with LOG.error() here, but could also be set as LOG.debug() or other, depending on our logging requirements.
+        // I went with LOG.debug() here, but could also be set as LOG.info() or other, depending on our logging requirements.
         if (LOG.isDebugEnabled()) {
             LOG.debug("HttpClientErrorException - " + e.getMessage());
         }

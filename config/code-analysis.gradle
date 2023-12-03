@@ -11,7 +11,7 @@ checkstyle {
     maxWarnings = 6
     ignoreFailures = false
     reportsDir = file("$project.buildDir/reports/checkstyle")
-    configFile = file("$rootProject.projectDir/config/checkstyle/checkstyle.xml")
+    configFile = file("$rootProject.projectDir/config/checkstyle/checkstyle.xml") // added path to checkstyle.xml
     showViolations = true
     toolVersion = "10.9.3"
 }
