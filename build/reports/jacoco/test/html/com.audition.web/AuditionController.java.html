@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>AuditionController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">audition-api</a> &gt; <a href="index.source.html" class="el_package">com.audition.web</a> &gt; <span class="el_source">AuditionController.java</span></div><h1>AuditionController.java</h1><pre class="source lang-java linenums">package com.audition.web;
+
+import static com.audition.common.validation.Validator.isInputValid;
+
+import com.audition.model.AuditionPost;
+import com.audition.model.Comment;
+import com.audition.service.AuditionService;
+import java.util.List;
+import java.util.stream.Collectors;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+<span class="fc" id="L21">public class AuditionController {</span>
+
+    @Autowired
+    private transient AuditionService auditionService; // marked as transient due to PMD requirements
+
+    // added health check endpoint
+    @RequestMapping(value = &quot;/health&quot;, method = RequestMethod.GET)
+    public String health() {
+<span class="nc" id="L29">        return &quot;OK&quot;;</span>
+    }
+
+    // TODO Add a query param that allows data filtering. The intent of the filter is at developers discretion. - DONE
+    @RequestMapping(value = &quot;/posts&quot;, method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public @ResponseBody ResponseEntity&lt;List&lt;AuditionPost&gt;&gt; getPosts(
+        @RequestParam(value = &quot;userId&quot;, required = false) final Integer userId) {
+<span class="nc" id="L36">        final List&lt;AuditionPost&gt; auditionPosts = auditionService.getPosts();</span>
+        // TODO Add logic that filters response data based on the query param - DONE
+<span class="nc bnc" id="L38" title="All 2 branches missed.">        if (userId != null) {</span>
+<span class="nc" id="L39">            final List&lt;AuditionPost&gt; filteredPosts = auditionPosts.stream()</span>
+<span class="nc bnc" id="L40" title="All 2 branches missed.">                .filter(post -&gt; post.getUserId() == userId)</span>
+<span class="nc" id="L41">                .collect(Collectors.toList());</span>
+<span class="nc" id="L42">            return ResponseEntity.ok(filteredPosts);</span>
+        }
+<span class="nc" id="L44">        return ResponseEntity.ok(auditionPosts);</span>
+    }
+
+    @RequestMapping(value = &quot;/posts/{id}&quot;, method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public @ResponseBody ResponseEntity&lt;AuditionPost&gt; getPost(@PathVariable(&quot;id&quot;) final String postId) {
+<span class="nc bnc" id="L49" title="All 2 branches missed.">        if (isInputValid(postId)) {</span>
+<span class="nc" id="L50">            final AuditionPost auditionPost = auditionService.getPostById(postId);</span>
+<span class="nc" id="L51">            return ResponseEntity.ok(auditionPost);</span>
+        } else {
+<span class="nc" id="L53">            return ResponseEntity.badRequest().build();</span>
+        }
+    }
+
+    // TODO Add additional methods to return comments for each post. Hint: Check https://jsonplaceholder.typicode.com/ - DONE
+    @RequestMapping(value = &quot;/postWithComments/{id}&quot;, method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public @ResponseBody ResponseEntity&lt;AuditionPost&gt; getPostWithComments(@PathVariable(&quot;id&quot;) final String postId) {
+<span class="nc bnc" id="L60" title="All 2 branches missed.">        if (isInputValid(postId)) {</span>
+<span class="nc" id="L61">            final AuditionPost postWithComments = auditionService.getPostWithComments(postId);</span>
+<span class="nc" id="L62">            return ResponseEntity.ok(postWithComments);</span>
+        } else {
+<span class="nc" id="L64">            return ResponseEntity.badRequest().build();</span>
+        }
+    }
+
+    @RequestMapping(value = &quot;/comments/{postId}&quot;, method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public @ResponseBody ResponseEntity&lt;List&lt;Comment&gt;&gt; getCommentsByPostId(
+        @PathVariable(&quot;postId&quot;) final String postId) {
+<span class="nc bnc" id="L71" title="All 2 branches missed.">        if (isInputValid(postId)) {</span>
+<span class="nc" id="L72">            final List&lt;Comment&gt; postComments = auditionService.getCommentsByPostId(postId);</span>
+<span class="nc" id="L73">            return ResponseEntity.ok(postComments);</span>
+        } else {
+<span class="nc" id="L75">            return ResponseEntity.badRequest().build();</span>
+        }
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>
