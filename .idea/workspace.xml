@@ -6,11 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="6d8c8be5-7651-48e6-8124-5d1cb218d9a2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/code-analysis.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/config/code-analysis.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/audition/web/advice/ExceptionControllerAdvice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/audition/web/advice/ExceptionControllerAdvice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/audition/configuration/ResponseHeaderInjector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/audition/configuration/ResponseHeaderInjector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/audition/configuration/WebServiceConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/audition/configuration/WebServiceConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/audition/AuditionApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/audition/AuditionApplicationTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,13 +68,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/LazarDukic-MedibankTest/audition-api"
   }
-}</component>
-  <component name="RunManager" selected="Application.AuditionApplication">
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\LazarDukic-MedibankTest\audition-api" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Gradle.AuditionApplicationTests">
     <configuration name="AuditionApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.audition.AuditionApplication" />
       <module name="audition-api.main" />
@@ -156,8 +161,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.audition-api [build]" />
         <item itemvalue="Gradle.AuditionApplicationTests" />
+        <item itemvalue="Gradle.audition-api [build]" />
         <item itemvalue="Gradle.audition-api [clean]" />
         <item itemvalue="Application.AuditionApplication" />
       </list>

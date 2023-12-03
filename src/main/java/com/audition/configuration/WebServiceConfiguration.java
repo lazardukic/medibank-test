@@ -41,6 +41,9 @@ public class WebServiceConfiguration implements WebMvcConfigurer {
     public RestTemplate restTemplate(final ObjectMapper objectMapper) {
         // TODO use object mapper
         // TODO create a logging interceptor that logs request/response for rest template calls.
+
+        // didn't have time to get this task working correctly
+
         return new RestTemplate(new BufferingClientHttpRequestFactory(createClientFactory()));
     }
 
