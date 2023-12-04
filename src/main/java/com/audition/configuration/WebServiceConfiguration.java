@@ -22,12 +22,6 @@ public class WebServiceConfiguration implements WebMvcConfigurer {
 
     @Bean
     public ObjectMapper objectMapper() {
-        // TODO configure Jackson Object mapper that - DONE
-        //  1. allows for date format as yyyy-MM-dd - DONE
-        //  2. Does not fail on unknown properties - DONE
-        //  3. maps to camelCase - DONE
-        //  4. Does not include null values or empty values - DONE
-        //  5. does not write datas as timestamps. - DONE
         final ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.setDateFormat(new SimpleDateFormat(YEAR_MONTH_DAY_PATTERN, Locale.getDefault()));
         objectMapper.disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES);

@@ -27,11 +27,10 @@ public class ExceptionControllerAdvice extends ResponseEntityExceptionHandler {
     private static final String DEFAULT_MESSAGE = "API Error occurred. Please contact support or administrator.";
 
     @Autowired
-    private transient AuditionLogger logger; // marked as transient due to PMD requirements
+    private transient AuditionLogger logger;
 
     @ExceptionHandler(HttpClientErrorException.class)
     ProblemDetail handleHttpClientException(final HttpClientErrorException e) {
-        // I went with LOG.debug() here, but could also be set as LOG.info() or other, depending on our logging requirements.
         if (LOG.isDebugEnabled()) {
             LOG.debug("HttpClientErrorException - " + e.getMessage());
         }
@@ -40,7 +39,6 @@ public class ExceptionControllerAdvice extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler(Exception.class)
     ProblemDetail handleMainException(final Exception e) {
-        // TODO Add handling for Exception - DONE - I just logged the exception but we could have different handling based on requirements. The same is done below
         if (LOG.isDebugEnabled()) {
             LOG.debug("Exception - " + e.getMessage());
         }
@@ -50,7 +48,6 @@ public class ExceptionControllerAdvice extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler(SystemException.class)
     ProblemDetail handleSystemException(final SystemException e) {
-        // TODO `Add Handling for SystemException - DONE
         if (LOG.isDebugEnabled()) {
             LOG.debug("SystemException - " + e.getMessage());
         }

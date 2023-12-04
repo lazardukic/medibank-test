@@ -1,6 +1,7 @@
 package com.audition.model;
 
 import java.util.List;
+import java.util.Objects;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -12,6 +13,23 @@ public class AuditionPost {
     private int id;
     private String title;
     private String body;
-    private List<Comment> comments; // added this to AuditionPost model because it was required by one of the tasks in AuditionIntegrationClient
+    private List<Comment> comments;
 
+    @Override
+    public boolean equals(final Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        final AuditionPost that = (AuditionPost) o;
+        return userId == that.userId && id == that.id && Objects.equals(title, that.title)
+            && Objects.equals(body, that.body) && Objects.equals(comments, that.comments);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(userId, id, title, body, comments);
+    }
 }
