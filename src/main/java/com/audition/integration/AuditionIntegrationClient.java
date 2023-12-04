@@ -1,8 +1,8 @@
 package com.audition.integration;
 
 import com.audition.common.exception.SystemException;
+import com.audition.model.AuditionComment;
 import com.audition.model.AuditionPost;
-import com.audition.model.Comment;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -45,15 +45,15 @@ public class AuditionIntegrationClient {
 
     public AuditionPost getPostWithComments(final Integer id) {
         final String url = postsUrlBase + "/" + id + "/comments";
-        final Comment[] comments = restTemplate.getForObject(url, Comment[].class);
+        final AuditionComment[] auditionComments = restTemplate.getForObject(url, AuditionComment[].class);
         final AuditionPost post = getPostById(id);
-        post.setComments(Arrays.asList(comments));
+        post.setAuditionComments(Arrays.asList(auditionComments));
         return post;
     }
 
-    public List<Comment> getCommentsByPostId(final Integer id) {
+    public List<AuditionComment> getCommentsByPostId(final Integer id) {
         final String url = commentsUrlBase + "?postId=" + id;
-        final Comment[] comments = restTemplate.getForObject(url, Comment[].class);
-        return Arrays.asList(comments);
+        final AuditionComment[] auditionComments = restTemplate.getForObject(url, AuditionComment[].class);
+        return Arrays.asList(auditionComments);
     }
 }

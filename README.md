@@ -14,3 +14,5 @@ In order to test the application locally please follow these steps:
 
 You can also monitor the health of the application by accessing the health actuator endpoint
 at `http://localhost:8080/actuator/health`
+
+For additional information about the classes, please check `Audition API Documentation.odt`

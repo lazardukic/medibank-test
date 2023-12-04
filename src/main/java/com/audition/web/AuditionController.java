@@ -3,8 +3,8 @@ package com.audition.web;
 import static com.audition.common.validation.Validator.isNull;
 import static com.audition.common.validation.Validator.isValidId;
 
+import com.audition.model.AuditionComment;
 import com.audition.model.AuditionPost;
-import com.audition.model.Comment;
 import com.audition.service.AuditionService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
@@ -77,11 +77,11 @@ public class AuditionController {
     @Operation(description = "Returns a list of comments related to a specific post based on the postId")
     @Parameter(name = POST_ID, description = "ID of the audition post", required = true)
     @GetMapping(value = "/comments/{postId}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public @ResponseBody ResponseEntity<List<Comment>> getCommentsByPostId(
+    public @ResponseBody ResponseEntity<List<AuditionComment>> getCommentsByPostId(
         @PathVariable(value = POST_ID, required = true) final Integer postId) {
         if (isValidId(postId)) {
-            final List<Comment> postComments = auditionService.getCommentsByPostId(postId);
-            return ResponseEntity.ok(postComments);
+            final List<AuditionComment> postAuditionComments = auditionService.getCommentsByPostId(postId);
+            return ResponseEntity.ok(postAuditionComments);
         } else {
             return ResponseEntity.badRequest().build();
         }

@@ -6,7 +6,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class Comment {
+public class AuditionComment {
 
     private int postId;
     private int id;
@@ -22,9 +22,10 @@ public class Comment {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        final Comment comment = (Comment) o;
-        return postId == comment.postId && id == comment.id && Objects.equals(name, comment.name)
-            && Objects.equals(email, comment.email) && Objects.equals(body, comment.body);
+        final AuditionComment auditionComment = (AuditionComment) o;
+        return postId == auditionComment.postId && id == auditionComment.id && Objects.equals(name,
+            auditionComment.name)
+            && Objects.equals(email, auditionComment.email) && Objects.equals(body, auditionComment.body);
     }
 
     @Override

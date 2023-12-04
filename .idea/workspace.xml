@@ -5,7 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6d8c8be5-7651-48e6-8124-5d1cb218d9a2" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gradle/7.6/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.6/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.6/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.6/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.6/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/checkstyle/checkstyle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/config/checkstyle/checkstyle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/checkstyle/suppressions.xml" beforeDir="false" afterPath="$PROJECT_DIR$/config/checkstyle/suppressions.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/audition/integration/AuditionIntegrationClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/audition/integration/AuditionIntegrationClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/audition/model/AuditionPost.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/audition/model/AuditionPost.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/audition/model/Comment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/audition/model/AuditionComment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/audition/service/AuditionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/audition/service/AuditionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/audition/web/AuditionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/audition/web/AuditionController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/audition/integration/AuditionControllerTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/audition/integration/AuditionControllerTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -86,9 +102,12 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\LazarDukic-MedibankTest\audition-api" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\LazarDukic-MedibankTest\audition-api" />
+    </key>
   </component>
   <component name="RunManager" selected="Gradle.audition-api [build]">
-    <configuration name="AuditionControllerTests.postInvalidIdTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="AuditionControllerTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -101,7 +120,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.audition.integration.AuditionControllerTests.postInvalidIdTest&quot;" />
+            <option value="&quot;com.audition.integration.AuditionControllerTests&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -111,7 +130,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="AuditionControllerTests.postWithCommentsInvalidIdTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="AuditionControllerTests.postTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -124,7 +143,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.audition.integration.AuditionControllerTests.postWithCommentsInvalidIdTest&quot;" />
+            <option value="&quot;com.audition.integration.AuditionControllerTests.postTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -157,7 +176,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="ValidatorTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="AuditionControllerTests.postsTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -170,7 +189,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.audition.unit.ValidatorTests&quot;" />
+            <option value="&quot;com.audition.integration.AuditionControllerTests.postsTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -204,10 +223,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.audition-api [build]" />
-        <item itemvalue="Gradle.AuditionControllerTests.postWithCommentsInvalidIdTest" />
-        <item itemvalue="Gradle.AuditionControllerTests.postInvalidIdTest" />
+        <item itemvalue="Gradle.AuditionControllerTests" />
+        <item itemvalue="Gradle.AuditionControllerTests.postTest" />
         <item itemvalue="Gradle.AuditionControllerTests.postsInvalidIdTest" />
-        <item itemvalue="Gradle.ValidatorTests" />
+        <item itemvalue="Gradle.AuditionControllerTests.postsTest" />
       </list>
     </recent_temporary>
   </component>
@@ -221,5 +240,16 @@
       <updated>1701567336311</updated>
     </task>
     <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/audition/integration/AuditionControllerTests.java</url>
+          <line>47</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

@@ -1,8 +1,8 @@
 package com.audition.service;
 
 import com.audition.integration.AuditionIntegrationClient;
+import com.audition.model.AuditionComment;
 import com.audition.model.AuditionPost;
-import com.audition.model.Comment;
 import java.util.List;
 import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +26,7 @@ public class AuditionService {
         return auditionIntegrationClient.getPostWithComments(postId);
     }
 
-    public List<Comment> getCommentsByPostId(final Integer postId) {
+    public List<AuditionComment> getCommentsByPostId(final Integer postId) {
         return auditionIntegrationClient.getCommentsByPostId(postId);
     }
 
