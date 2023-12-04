@@ -1,6 +1,6 @@
 package com.audition.common.logging;
 
-import static com.audition.common.validation.Validator.isInputValid;
+import static com.audition.common.validation.Validator.notNull;
 
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
@@ -60,16 +60,14 @@ public class AuditionLogger {
     }
 
     private String createStandardProblemDetailMessage(final ProblemDetail standardProblemDetail) {
-        // TODO Add implementation here. - DONE
-        if (isInputValid(standardProblemDetail)) {
+        if (notNull(standardProblemDetail)) {
             return standardProblemDetail.getDetail();
         }
         return StringUtils.EMPTY;
     }
 
     private String createBasicErrorResponseMessage(final Integer errorCode, final String message) {
-        // TODO Add implementation here. - DONE
-        if (isInputValid(errorCode) && isInputValid(message)) {
+        if (notNull(errorCode) && notNull(message)) {
             return "Error message: " + message + ", Error code: " + errorCode;
         }
         return StringUtils.EMPTY;

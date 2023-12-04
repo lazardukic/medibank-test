@@ -4,6 +4,7 @@ import com.audition.integration.AuditionIntegrationClient;
 import com.audition.model.AuditionPost;
 import com.audition.model.Comment;
 import java.util.List;
+import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,22 +12,28 @@ import org.springframework.stereotype.Service;
 public class AuditionService {
 
     @Autowired
-    private transient AuditionIntegrationClient auditionIntegrationClient; // marked as transient due to PMD requirements
+    private transient AuditionIntegrationClient auditionIntegrationClient;
 
     public List<AuditionPost> getPosts() {
         return auditionIntegrationClient.getPosts();
     }
 
-    public AuditionPost getPostById(final String postId) {
+    public AuditionPost getPostById(final Integer postId) {
         return auditionIntegrationClient.getPostById(postId);
     }
 
-    public AuditionPost getPostWithComments(final String postId) {
+    public AuditionPost getPostWithComments(final Integer postId) {
         return auditionIntegrationClient.getPostWithComments(postId);
     }
 
-    public List<Comment> getCommentsByPostId(final String postId) {
+    public List<Comment> getCommentsByPostId(final Integer postId) {
         return auditionIntegrationClient.getCommentsByPostId(postId);
+    }
+
+    public List<AuditionPost> filterPostsByUserId(final List<AuditionPost> auditionPosts, final Integer userId) {
+        return auditionPosts.stream()
+            .filter(post -> post.getUserId() == userId)
+            .collect(Collectors.toList());
     }
 
 }
